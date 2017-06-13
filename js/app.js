@@ -138,19 +138,18 @@ var viewModel = function() {
 
   // iterate through mapList and add marker event listener and API information
   for (var i=0; i < self.mapListLength; i++){
-abc(passedMapMarker);}
-    function abc(var passedMapMarker){
-			//add API items to each mapMarker
-		self.addApiInfo(passedMapMarker);
+
+    (function abc(passedMapMarker){
+    	self.addApiInfo(passedMapMarker);
 			//add the click event listener to mapMarker
 		passedMapMarker.addListener('click', function(){
 				//set this mapMarker to the "selected" state
 		self.setSelected(passedMapMarker);
 			});
+	})
 		
 (self.mapList[i]);
   }
-  
 
   // create a filter observable for filter text
   self.filterText = ko.observable('');
